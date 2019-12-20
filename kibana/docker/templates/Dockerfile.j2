@@ -14,7 +14,7 @@
 # Description: 
 # This Dockerfile was generated from the template at templates/Dockerfile.j2
 
-{%   set kibana_url = 'https://artifacts.elastic.co/downloads/kibana' -%}
+{%   set kibana_url = kibana_url -%}
 {%   set url_root = artifacts_url -%}
 {%   set plugins = plugins -%}
 {%   set tarball = 'kibana-oss-%s-linux-x86_64.tar.gz' % es_version -%}
