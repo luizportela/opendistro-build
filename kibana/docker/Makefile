@@ -29,7 +29,7 @@ OPENDISTRO_VERSION ?= $(shell ../bin/version-info --od)
 IMAGE_TAG ?= $(OPENDISTRO_REGISTRY)/opendistro-for-elasticsearch-kibana
 OPENDISTRO_PLUGINS ?= opendistro-security/opendistro_security_kibana_plugin-$(OPENDISTRO_VERSION).0.zip opendistro-alerting/opendistro-alerting-$(OPENDISTRO_VERSION).0.zip opendistro-index-management/opendistro_index_management_kibana-$(OPENDISTRO_VERSION).1.zip
 ARTIFACTS_URL='https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana'
-
+KIBANA_URL='https://artifacts.elastic.co/downloads/kibana'
 
 all: build test
 
