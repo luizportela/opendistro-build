@@ -78,6 +78,7 @@ venv: requirements.txt
 # Generate the Dockerfiles from Jinja2 templates.
 dockerfile: venv templates/Dockerfile.j2
 	jinja2 \
+	  -D kibana_url='$(KIBANA_URL)' \
 	  -D artifacts_url='$(ARTIFACTS_URL)' \
 	  -D version_tag='${OPENDISTRO_VERSION}' \
 	  -D es_version='$(ES_VERSION)' \
