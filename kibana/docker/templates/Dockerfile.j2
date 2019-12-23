@@ -31,7 +31,7 @@ ENV PATH=/usr/share/kibana/bin:$PATH
 
 RUN curl -Ls {{ kibana_url }}/{{ tarball }} | tar --strip-components=1 -zxf - && \
     for plugin in {{ plugins }}; do \
-        kibana-plugin install --allow-root "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana-plugins/$plugin"; \
+        kibana-plugin install "https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana-plugins/$plugin"; \
     done && \
     ln -s /usr/share/kibana /opt/kibana && \
     chown -R 1000:0 . && \
