@@ -30,6 +30,7 @@ IMAGE_TAG ?= $(OPENDISTRO_REGISTRY)/opendistro-for-elasticsearch-kibana
 OPENDISTRO_PLUGINS ?= opendistro-security/opendistro_security_kibana_plugin-$(OPENDISTRO_VERSION).0.zip opendistro-alerting/opendistro-alerting-$(OPENDISTRO_VERSION).0.zip
 ARTIFACTS_URL='https://d3g5vo6xdbdb9a.cloudfront.net/downloads/kibana'
 KIBANA_URL ?= 'https://artifacts.elastic.co/downloads/kibana'
+TARBALL ?= 'kibana-oss-$(ES_VERSION)-linux-x86_64.tar.gz'
 
 all: build test
 
@@ -79,6 +80,7 @@ venv: requirements.txt
 dockerfile: venv templates/Dockerfile.j2
 	jinja2 \
 	  -D kibana_url='$(KIBANA_URL)' \
+	  -D tarball='$(TARBALL)' \
 	  -D artifacts_url='$(ARTIFACTS_URL)' \
 	  -D version_tag='${OPENDISTRO_VERSION}' \
 	  -D es_version='$(ES_VERSION)' \
